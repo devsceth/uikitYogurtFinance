@@ -3484,7 +3484,7 @@ var MenuLink = function (_a) {
     return React__default['default'].createElement(Tag, __assign({}, props, otherProps));
 };
 
-var Icons$3 = IconModule;
+var Icons$1 = IconModule;
 var Container$1 = styled__default['default'].div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: 100%;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: 100%;\n"])));
 var PanelBody = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
@@ -3492,7 +3492,7 @@ var PanelBody = function (_a) {
     // Close the menu when a user clicks a link on mobile
     var handleClick = isMobile ? function () { return pushNav(false); } : undefined;
     return (React__default['default'].createElement(Container$1, null, links.map(function (entry) {
-        var Icon = Icons$3[entry.icon];
+        var Icon = Icons$1[entry.icon];
         var iconElement = React__default['default'].createElement(Icon, { width: "24px", mr: "8px" });
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         if (entry.items) {
@@ -3523,21 +3523,9 @@ var CakePrice = function (_a) {
 var CakePrice$1 = React__default['default'].memo(CakePrice);
 var templateObject_1$8;
 
-var Icons$2 = IconModule;
-var MoonIcon = Icons$2.MoonIcon, SunIcon = Icons$2.SunIcon;
-var ThemeSwitcher = function (_a) {
-    var isDark = _a.isDark, toggleTheme = _a.toggleTheme;
-    return (React__default['default'].createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
-        React__default['default'].createElement(Flex, { alignItems: "center" },
-            React__default['default'].createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
-            React__default['default'].createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
-            React__default['default'].createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))));
-};
-var ThemeSwitcher$1 = React__default['default'].memo(ThemeSwitcher, function (prev, next) { return prev.isDark === next.isDark; });
-
-var Icons$1 = IconModule;
+var Icons = IconModule;
 var SocialLinks = function () { return (React__default['default'].createElement(Flex, null, socials.map(function (social, index) {
-    var Icon = Icons$1[social.icon];
+    var Icon = Icons[social.icon];
     var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
     var mr = index < socials.length - 1 ? "24px" : 0;
     if (social.items) {
@@ -3548,17 +3536,6 @@ var SocialLinks = function () { return (React__default['default'].createElement(
 }))); };
 var SocialLinks$1 = React__default['default'].memo(SocialLinks, function () { return true; });
 
-var Icons = IconModule;
-var LanguageIcon = Icons.LanguageIcon;
-var LangSelector = function (_a) {
-    var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang;
-    return (React__default['default'].createElement(Dropdown, { position: "top-right", target: React__default['default'].createElement(Button, { variant: "text", startIcon: React__default['default'].createElement(LanguageIcon, { color: "textSubtle", width: "24px" }) },
-            React__default['default'].createElement(Text, { color: "textSubtle" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React__default['default'].createElement(MenuButton, { key: lang.code, fullWidth: true, onClick: function () { return setLang(lang); }, 
-        // Safari fix
-        style: { minHeight: "32px", height: "auto" } }, lang.language)); })));
-};
-var LangSelector$1 = React__default['default'].memo(LangSelector, function (prev, next) { return prev.currentLang === next.currentLang; });
-
 var Container = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  background-color: ", ";\n  border-top: solid 2px rgba(133, 133, 133, 0.1);\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  background-color: ", ";\n  border-top: solid 2px rgba(133, 133, 133, 0.1);\n"])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
@@ -3566,7 +3543,7 @@ var Container = styled__default['default'].div(templateObject_1$7 || (templateOb
 var SettingsEntry = styled__default['default'].div(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
 var SocialEntry = styled__default['default'].div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
-    var isPushed = _a.isPushed, pushNav = _a.pushNav, toggleTheme = _a.toggleTheme, isDark = _a.isDark, cakePriceUsd = _a.cakePriceUsd, currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang;
+    var isPushed = _a.isPushed, pushNav = _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang;
     if (!isPushed) {
         return (React__default['default'].createElement(Container, null,
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
@@ -3576,9 +3553,7 @@ var PanelFooter = function (_a) {
         React__default['default'].createElement(SocialEntry, null,
             React__default['default'].createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd }),
             React__default['default'].createElement(SocialLinks$1, null)),
-        React__default['default'].createElement(SettingsEntry, null,
-            React__default['default'].createElement(ThemeSwitcher$1, { isDark: isDark, toggleTheme: toggleTheme }),
-            React__default['default'].createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang }))));
+        React__default['default'].createElement(SettingsEntry, null)));
 };
 var templateObject_1$7, templateObject_2$2, templateObject_3$1;
 
@@ -3991,26 +3966,26 @@ var templateObject_1;
 
 var baseColors = {
     failure: "#ED7F10",
-    primary: "#fad014",
-    primaryBright: "#fad014",
-    primaryDark: "#fad014",
-    secondary: "#fad014",
+    primary: "#f8dec7",
+    primaryBright: "#f8dec7",
+    primaryDark: "#f8dec7",
+    secondary: "#f8dec7",
     success: "#32D9C8",
     successalt: "#e2f4ff",
-    warning: "#fad014",
-    soon: "#fad014",
+    warning: "#f8dec7",
+    soon: "#f8dec7",
 };
 var brandColors = {
-    binance: "#fad014",
+    binance: "#f8dec7",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#E3D6BF", backgroundDisabled: "#E3D6BF", backgroundAlt: "#E3D6BF", contrast: "#191326", dropdown: "#E3D6BF", invertedContrast: "#FFFFFF", input: "#E3D6BF", inputSecondary: "#E3D6BF", tertiary: "#E3D6BF", text: "#fad014", textDisabled: "#BDC2C4", textSubtle: "#fad014", borderColor: "#E9EAEB", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#E3D6BF", backgroundDisabled: "#E3D6BF", backgroundAlt: "#E3D6BF", contrast: "#191326", dropdown: "#E3D6BF", invertedContrast: "#FFFFFF", input: "#E3D6BF", inputSecondary: "#E3D6BF", tertiary: "#E3D6BF", text: "#f8dec7", textDisabled: "#BDC2C4", textSubtle: "#f8dec7", borderColor: "#E9EAEB", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #eff8ff 100%)",
         cardHeader: "linear-gradient(111.68deg, #F2ECF2 0%, #E8F2F6 100%)",
         blue: "linear-gradient(180deg, #A7E8F1 0%, #94E1F2 100%)",
         violet: "linear-gradient(180deg, #E2C9FB 0%, #CDB8FA 100%)",
         violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#fad014", background: "#343135", backgroundDisabled: "#3c3742", backgroundAlt: "#27262c", contrast: "#FFFFFF", dropdown: "#1E1D20", invertedContrast: "#191326", input: "#011A27", inputSecondary: "#66578D", primaryDark: "#fad014", tertiary: "#353547", text: "#e2effc", textDisabled: "#666171", textSubtle: "#c9c4d4", borderColor: "#524B63", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#f8dec7", background: "#343135", backgroundDisabled: "#3c3742", backgroundAlt: "#27262c", contrast: "#FFFFFF", dropdown: "#1E1D20", invertedContrast: "#191326", input: "#011A27", inputSecondary: "#66578D", primaryDark: "#f8dec7", tertiary: "#353547", text: "#e2effc", textDisabled: "#666171", textSubtle: "#c9c4d4", borderColor: "#524B63", gradients: {
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #2a4654 100%)",
         cardHeader: "linear-gradient(166.77deg, #3B4155 0%, #3A3045 100%)",
         blue: "linear-gradient(180deg, #00707F 0%, #19778C 100%)",
